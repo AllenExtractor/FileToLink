@@ -77,7 +77,7 @@ class Var:
 
     FORCE_CHANNEL_ID: Optional[int] = None
 
-    force_channel_env = os.getenv("FORCE_CHANNEL_ID", "-1003330631655").strip()
+    force_channel_env = os.getenv("FORCE_CHANNEL_ID", "-1002258155184").strip()
 
     if force_channel_env:
         try:
