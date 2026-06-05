@@ -61,7 +61,7 @@ class Var:
 
     SET_COMMANDS: bool = str_to_bool(os.getenv("SET_COMMANDS", "True"))
 
-    DATABASE_URL: str = os.getenv("DATABASE_URL", "mongodb+srv://msbro1099_db_user:msbro786178@cluster0.mrfafaz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+    DATABASE_URL: str = os.getenv("DATABASE_URL", "mongodb+srv://developerbro723_db_user:9axC7c7iQm0G3ESO@cluster0.dr8m75m.mongodb.net/?appName=Cluster0")
 
     if not DATABASE_URL:
         logger.critical("DATABASE_URL is required")
