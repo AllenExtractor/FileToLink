@@ -25,19 +25,19 @@ def str_to_int_set(val: str) -> Set[int]:
 
 
 class Var:
-    API_ID: int = int(os.getenv("API_ID", "0"))
-    API_HASH: str = os.getenv("API_HASH", "")
+    API_ID: int = int(os.getenv("API_ID", "38498066"))
+    API_HASH: str = os.getenv("API_HASH", "c9696114751feacdeb1b4487f5839a1a")
     BOT_TOKEN: str = os.getenv("BOT_TOKEN", "")
 
     if not all([API_ID, API_HASH, BOT_TOKEN]):
         logger.critical("Missing required Telegram API configuration")
         raise ValueError("Missing required Telegram API configuration")
 
-    NAME: str = os.getenv("NAME", "ThunderF2L")
+    NAME: str = os.getenv("NAME", "CINDERELLA")
     SLEEP_THRESHOLD: int = int(os.getenv("SLEEP_THRESHOLD", "600"))
     WORKERS: int = int(os.getenv("WORKERS", "8"))
 
-    BIN_CHANNEL: int = int(os.getenv("BIN_CHANNEL", "0"))
+    BIN_CHANNEL: int = int(os.getenv("BIN_CHANNEL", "-1003895046016"))
 
     if not BIN_CHANNEL:
         logger.critical("BIN_CHANNEL is required")
@@ -48,7 +48,7 @@ class Var:
     PING_INTERVAL: int = int(os.getenv("PING_INTERVAL", "840"))
     NO_PORT: bool = str_to_bool(os.getenv("NO_PORT", "True"))
 
-    OWNER_ID: int = int(os.getenv("OWNER_ID", "0"))
+    OWNER_ID: int = int(os.getenv("OWNER_ID", "8446475678"))
 
     if not OWNER_ID:
         logger.warning("WARNING: OWNER_ID is not set. No user will be granted owner access.")
@@ -61,7 +61,7 @@ class Var:
 
     SET_COMMANDS: bool = str_to_bool(os.getenv("SET_COMMANDS", "True"))
 
-    DATABASE_URL: str = os.getenv("DATABASE_URL", "")
+    DATABASE_URL: str = os.getenv("DATABASE_URL", "mongodb+srv://msbro1099_db_user:msbro786178@cluster0.mrfafaz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 
     if not DATABASE_URL:
         logger.critical("DATABASE_URL is required")
@@ -77,7 +77,7 @@ class Var:
 
     FORCE_CHANNEL_ID: Optional[int] = None
 
-    force_channel_env = os.getenv("FORCE_CHANNEL_ID", "").strip()
+    force_channel_env = os.getenv("FORCE_CHANNEL_ID", "-1003330631655").strip()
 
     if force_channel_env:
         try:
