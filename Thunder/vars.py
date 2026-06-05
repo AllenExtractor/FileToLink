@@ -69,7 +69,7 @@ class Var:
 
     MAX_BATCH_FILES: int = int(os.getenv("MAX_BATCH_FILES", "50"))
 
-    CHANNEL: bool = str_to_bool(os.getenv("CHANNEL", "False"))
+    CHANNEL: bool = str_to_bool(os.getenv("CHANNEL", "True"))
 
     BANNED_CHANNELS: Set[int] = str_to_int_set(os.getenv("BANNED_CHANNELS", ""))
 
