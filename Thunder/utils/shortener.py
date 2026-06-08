@@ -69,6 +69,29 @@ class CuttLyPlugin(ShortenerPlugin):
             return response.json()["url"]["shortLink"]
         return url
 
+# ─── VPLink Plugin (NEW) ───────────────────────────────────────────────────────
+class VPLinkPlugin(ShortenerPlugin):
+    @classmethod
+    def matches(cls, domain: str) -> bool:
+        return "vplink.in" in domain
+
+    async def shorten(self, url: str, api_key: str) -> str:
+        try:
+            response = self.session.get(
+                "https://vplink.in/api",
+                params={"api": api_key, "url": url}
+            )
+            if response.status_code == 200:
+                data = response.json()
+                if data.get("status") == "success":
+                    return data.get("shortenedUrl", url)
+            logger.warning(f"VPLink API unexpected response: {response.status_code} {response.text[:200]}")
+            return url
+        except Exception as e:
+            logger.error(f"VPLink shorten error: {e}", exc_info=True)
+            return url
+# ──────────────────────────────────────────────────────────────────────────────
+
 class GenericShortenerPlugin(ShortenerPlugin):
     @classmethod
     def matches(cls, domain: str) -> bool:
