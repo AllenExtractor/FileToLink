@@ -85,13 +85,13 @@ class Var:
         except ValueError:
             logger.warning(f"Invalid FORCE_CHANNEL_ID '{force_channel_env}' in environment; must be an integer.")
 
-    TOKEN_ENABLED: bool = str_to_bool(os.getenv("TOKEN_ENABLED", "False"))
-    TOKEN_TTL_HOURS: int = int(os.getenv("TOKEN_TTL_HOURS", "24"))
+    TOKEN_ENABLED: bool = str_to_bool(os.getenv("TOKEN_ENABLED", "True"))
+    TOKEN_TTL_HOURS: int = int(os.getenv("TOKEN_TTL_HOURS", "12"))
 
-    SHORTEN_ENABLED: bool = str_to_bool(os.getenv("SHORTEN_ENABLED", "False"))
-    SHORTEN_MEDIA_LINKS: bool = str_to_bool(os.getenv("SHORTEN_MEDIA_LINKS", "False"))
-    URL_SHORTENER_API_KEY: str = os.getenv("URL_SHORTENER_API_KEY", "")
-    URL_SHORTENER_SITE: str = os.getenv("URL_SHORTENER_SITE", "")
+    SHORTEN_ENABLED: bool = str_to_bool(os.getenv("SHORTEN_ENABLED", "True"))
+    SHORTEN_MEDIA_LINKS: bool = str_to_bool(os.getenv("SHORTEN_MEDIA_LINKS", "True"))
+    URL_SHORTENER_API_KEY: str = os.getenv("URL_SHORTENER_API_KEY", "77c2d224b7028974719d3e97d8d05a90eec09922")
+    URL_SHORTENER_SITE: str = os.getenv("URL_SHORTENER_SITE", "https://vplink.in")
 
     GLOBAL_RATE_LIMIT: bool = str_to_bool(os.getenv("GLOBAL_RATE_LIMIT", "False"))
     MAX_GLOBAL_REQUESTS_PER_MINUTE: int = int(os.getenv("MAX_GLOBAL_REQUESTS_PER_MINUTE", "4"))
